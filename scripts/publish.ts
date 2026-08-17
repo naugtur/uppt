@@ -51,7 +51,7 @@ function main () {
     throw new Error(`No tarball matching ${prefix}-*.tgz found in ${process.cwd()}`)
   }
   for (const tarball of tarballs) {
-    run('npm', ['stage', 'publish', `./${tarball}`, '--provenance', `--access=${access}`])
+    run('npm', ['stage', 'publish', `./${tarball}`, '--ignore-scripts', '--provenance', `--access=${access}`])
   }
 }
 
